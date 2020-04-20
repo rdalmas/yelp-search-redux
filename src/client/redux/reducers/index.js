@@ -1,3 +1,7 @@
 import { combineReducers } from "redux";
 
-export default combineReducers({});
+import business from "./business"
+
+export default combineReducers({
+  business
+});

@@ -4,7 +4,7 @@ import SearchResults from "../components/SearchResults/SearchResults";
 
 const BusinessSearch = () => (
   <>
-    <h2>business search</h2>
+    <h2>Business Search</h2>
     <Filters />
     <SearchResults />
   </>

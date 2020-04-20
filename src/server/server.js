@@ -28,7 +28,7 @@ server
     
     server.use("/api", routes);
 
-    //TODO: implement preload state dispatching search action with default parameters
+    // TODO: implement preload state dispatching search action with default parameters
 
     if (context.url) {
       res.redirect(context.url);

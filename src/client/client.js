@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 
 import configureStore from '../configureStore'
 
+// TODO: get whatever preloaded state the server has fetched and inputs on the store
 const store = configureStore()
 
 hydrate(
