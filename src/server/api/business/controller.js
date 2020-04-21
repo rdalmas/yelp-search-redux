@@ -5,7 +5,7 @@ const router = express.Router();
 const YELP_HOST = process.env.RAZZLE_YELP_HOST;
 const YELP_API_KEY = process.env.RAZZLE_YELP_API_KEY;
 
-//TODO: implement actual unit tests for the search endpoint
+//TODO: implement actual unit tests
 
 router.get("/search", async (req, res) => {
   try {
@@ -17,7 +17,7 @@ router.get("/search", async (req, res) => {
       }
     })
     const data = await resp.json();
-    res.json(data);
+    res.status(200).send(data);
   } catch(e) {
     console.log("ERROR: ", e);
   }

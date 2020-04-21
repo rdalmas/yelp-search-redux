@@ -12,6 +12,8 @@ import routes from "./routes";
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 const server = express();
 
+server.use("/api", routes);
+
 server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
@@ -25,8 +27,6 @@ server
         </StaticRouter>
       </Provider>
     );
-    
-    server.use("/api", routes);
 
     // TODO: implement preload state dispatching search action with default parameters
 

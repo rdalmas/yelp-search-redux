@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import business from "./business"
+import businessSearch from "./businessSearch"
 
 export default combineReducers({
-  business
+  businessSearch
 });
