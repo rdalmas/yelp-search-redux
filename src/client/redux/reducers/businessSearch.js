@@ -13,20 +13,21 @@ const defaultState = {
     {
       options: ["pizza", "burguer", "sushi"],
       type: "radio",
-      name: "category",
+      name: "categories",
       defaultValue: "pizza"
     },
     {
+      helpText: "Examples: 'New York City', 'NYC', '350 5th Ave, New York, NY 10118",
       defaultValue: "Berlin, Germany",
       type: "text",
       name: "location",
-      disabled: false
+      disabled: true
     },
     {
-      name: "limit",
+      name: "limit", // TODO: implement pagination logic in a separated component
       defaultValue: 10,
       options: [10, 25, 50],
-      type: "select" //TODO: implement select component and pagination logic in a separated component
+      type: "select" // TODO: implement select component
     }
   ]
 };

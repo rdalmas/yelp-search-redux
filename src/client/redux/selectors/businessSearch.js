@@ -8,13 +8,14 @@ export const getBusiness = createSelector(
     return business.map(business => ({
       id: business.id,
       name: business.name,
-      imageUrl: business.image_url,
+      imageUrl: business.image_url.replace("o.jpg", "l.jpg"), // getting large image. More info: https://www.yelp.com/developers/faq
+      imageAlt: business.alias,
       coordinates: business.coordinates,
       rating: business.rating,
       reviewCount: business.review_count,
       isClosed: business.is_closed,
       url: business.url,
-      address: business.display_address && business.display_address.join(", "),
+      address: business.location.display_address && business.location.display_address.join(", "),
       phone: business.phone
     }));
   }
@@ -22,10 +23,7 @@ export const getBusiness = createSelector(
 
 export const isLoading = createSelector(
   businessState,
-  ({ loading }) => {
-    console.log("is loading => ", loading);
-    return loading
-  } 
+  ({ loading }) => loading
 );
 
 export const getBasicFilters = createSelector(

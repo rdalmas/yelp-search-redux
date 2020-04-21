@@ -1,4 +1,4 @@
-const generatePage = (assets, markup) => (
+const generatePage = (assets, markup, preloadedState) => (
   `<!doctype html>
     <html lang="">
       <head>
@@ -18,7 +18,15 @@ const generatePage = (assets, markup) => (
           }
       </head>
       <body>
-          <div id="root">${markup}</div>
+        <div id="root">${markup}</div>
+        <script>
+          // WARNING: See the following for security issues around embedding JSON in HTML:
+          // https://redux.js.org/recipes/server-rendering/#security-considerations
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+            /</g,
+            '\\u003c'
+          )}
+        </script>
       </body>
     </html>`
 )

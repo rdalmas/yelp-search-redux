@@ -12,15 +12,21 @@ const BusinessSearch = () => {
   const basicFilters = useSelector(getBasicFilters);
   const business = useSelector(getBusiness);
   const loading = useSelector(isLoading);
-  const onChange = useCallback((param) => {
+  const onSubmit = useCallback((param) => {
     dispatch(searchBusiness(param))
   }, [dispatch]);
   return (
-    <>
-      <h2>Business Search</h2>
-      <Filters basicFilters={basicFilters} onChange={onChange} defaultParams={defaultParams} />
-      <SearchResults results={business} isLoading={loading} />
-    </>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-4">
+          <h2>Business Search</h2>
+          <Filters basicFilters={basicFilters} onSubmit={onSubmit} defaultParams={defaultParams} />
+        </div>
+        <div className="col-md-8 align-self-center">
+          <SearchResults results={business} isLoading={loading} />
+        </div>
+      </div>
+    </div>
   );
 }
 

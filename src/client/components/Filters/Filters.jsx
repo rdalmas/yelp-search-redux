@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import BasicFilters from "./BasicFilters";
 
-const Filters = ({ basicFilters, onChange, defaultParams = {} }) => {
+const Filters = ({ basicFilters, onSubmit, defaultParams = {} }) => {
   const [params, setParams] = useState({...defaultParams});
   const onChangeFilter = (e) => {
     const { name, value } = e.target;
@@ -13,13 +13,18 @@ const Filters = ({ basicFilters, onChange, defaultParams = {} }) => {
       }
     })
   }
-  useEffect(() => {
-    onChange(params)
-  }, [params])
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    onSubmit(params);
+  }
 
   return (
     <>
-      {basicFilters && (<BasicFilters filters={basicFilters} onChange={(e) => onChangeFilter(e)} />)}
+      {basicFilters && (
+        <BasicFilters 
+          filters={basicFilters} 
+          onChange={(e) => onChangeFilter(e)} 
+          onSubmit={(e) => onSubmitHandler(e)} />)}
     </>
   )
 }

@@ -4,6 +4,8 @@ export const actions = {
   ERROR: "ERROR"
 }
 
+const baseUrl = process.env.RAZZLE_SERVER_HOST;
+
 export const endpoints = {
-  SEARCH_BUSINESS: "/api/business/search"
+  SEARCH_BUSINESS: `${baseUrl}/api/business/search`
 }
