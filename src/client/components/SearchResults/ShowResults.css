@@ -2,3 +2,7 @@
   height: 8rem;
   object-fit: cover;
 }
+
+label {
+  text-transform: capitalize;
+}

@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import BasicFilters from "./BasicFilters";
+import useParams from "../../hooks/useParams";
 
 const Filters = ({ basicFilters, onSubmit, defaultParams = {} }) => {
-  const [params, setParams] = useState({...defaultParams});
-  const onChangeFilter = (e) => {
+  const { params, updateParams } = useParams(defaultParams);
+  
+  function onChangeFilter(e) {
     const { name, value } = e.target;
-    setParams(prevState => {
-      return {
-        ...prevState,
-        [name]: value
-      }
-    })
+    updateParams(name, value);
   }
-  const onSubmitHandler = (e) => {
+  function onSubmitHandler(e) {
     e.preventDefault();
     onSubmit(params);
   }

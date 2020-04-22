@@ -5,7 +5,7 @@ import "./ShowResults.css"
 const ShowResults = ({ results }) => (
   <div className="row">
     {results && results.map(result => (
-      <div key={result.id} className="col-md-12 col-lg-6 col-sm-12">
+      <div key={result.id} className="col-md-12 col-lg-3 col-sm-12">
         <div className="card mt-3" style={{ height: "15rem" }}>
           <div className="image-wrapper">
             <img className="card-img-top img-fluid" src={result.imageUrl} alt={result.imageAlt} />
@@ -19,9 +19,5 @@ const ShowResults = ({ results }) => (
     ))}
   </div>
 );
-
-// width: 100%;
-// height: 15vw;
-// object-fit: cover;
 
 export default ShowResults;

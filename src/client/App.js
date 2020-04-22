@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import BusinessSearch from "./pages/BusinessSearch";
 
-const App = () => (
+export const App = () => (
   <Switch>
     <Route exact path="/" component={BusinessSearch} />
   </Switch>

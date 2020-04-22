@@ -5,7 +5,7 @@ const businessState = ({ businessSearch }) => businessSearch
 export const getBusiness = createSelector(
   businessState,
   ({ business }) => {
-    return business.map(business => ({
+    return business && business.map(business => ({
       id: business.id,
       name: business.name,
       imageUrl: business.image_url.replace("o.jpg", "l.jpg"), // getting large image. More info: https://www.yelp.com/developers/faq
@@ -33,7 +33,17 @@ export const getBasicFilters = createSelector(
 
 export const getDefaultParams = createSelector(
   businessState,
-  ({ basicFilters }) => basicFilters.reduce((prev, next) => ({
-      ...prev, [next.name]: next.defaultValue
+  ({ basicFilters }) => basicFilters.reduce((acc, next) => ({
+      ...acc, [next.name]: next.defaultValue
     }), {})
-)
+);
+
+export const getPaginationData = createSelector(
+  businessState,
+  ({ total, basicFilters }) => {
+    const limit = basicFilters.find(filter => filter.name === "limit");
+    if (limit && limit.defaultValue) return { total, limit: limit.defaultValue }
+
+    return { total, limit: 10 }
+  }
+);

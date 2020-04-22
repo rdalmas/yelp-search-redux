@@ -7,9 +7,17 @@ import InputText from "../Inputs/InputText";
 function RenderInput({ type, options, name, disabled, defaultValue, onChange, helpText }) {
   switch(type) {
     case types.radio:
-      return (<InputRadio name={name} options={options} onChange={onChange} defaultValue={defaultValue} />)
+      return (
+        <div className="mt-3">
+          <InputRadio name={name} options={options} onChange={onChange} defaultValue={defaultValue} />
+        </div>
+      );
     case types.text:
-      return (<InputText name={name} disabled={disabled} onChange={onChange} defaultValue={defaultValue} helpText={helpText} />)
+      return (
+        <div className="mt-3">
+          <InputText name={name} disabled={disabled} onChange={onChange} defaultValue={defaultValue} helpText={helpText} />
+        </div>
+      );
     default:
       return null
   }
@@ -17,10 +25,10 @@ function RenderInput({ type, options, name, disabled, defaultValue, onChange, he
 const BasicFilters = ({ filters, onChange, onSubmit }) => (
   <>
     <h5>Basic Filters</h5>
-    {filters.map(filter => (
+    {filters && filters.map(filter => (
       <RenderInput key={filter.name} onChange={onChange} {...filter}  />
     ))}
-    <button type="button" class="btn btn-primary" onClick={onSubmit}>Filter</button>
+    <button type="button" className="btn btn-primary mt-3" onClick={onSubmit}>Filter</button>
   </>
 )
 
