@@ -15,7 +15,8 @@ export default async function serverRender(req, res) {
     const params = {
       limit: 10,
       categories: "pizza",
-      location: "Berlin, Germany"
+      location: "Berlin, Germany",
+      offset: 0
     }
     store.dispatch(searchBusiness(params))
       .then(() => {
