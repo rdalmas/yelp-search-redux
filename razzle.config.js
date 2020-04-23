@@ -2,6 +2,7 @@
 const path = require('path');
 
 module.exports = {
+  modify: require("razzle-heroku"),
   modify(config) {
     const appConfig = config;
     // CHANGING ENTRY POINT FOR CLIENT
