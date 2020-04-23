@@ -4,7 +4,8 @@ const generatePage = (assets, markup, preloadedState) => (
       <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta charset="utf-8" />
-          <title>Welcome to Razzle</title>
+          <title>Yelp Search</title>
+          <meta name="description" content="Search restaurants using Yelp fusion api!" />
           <meta name="viewport" content="width=device-width, initial-scale=1">
           ${
             assets.client.css
@@ -20,8 +21,6 @@ const generatePage = (assets, markup, preloadedState) => (
       <body>
         <div id="root">${markup}</div>
         <script>
-          // WARNING: See the following for security issues around embedding JSON in HTML:
-          // https://redux.js.org/recipes/server-rendering/#security-considerations
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
             /</g,
             '\\u003c'

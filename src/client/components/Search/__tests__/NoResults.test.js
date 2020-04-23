@@ -9,7 +9,7 @@ describe('No Results - ', () => {
   beforeEach(() => {
     wrapped = shallow(<NoResults />)
   })
-  it('renders the', () => { 
-    expect(wrapped.find('h2').text()).toEqual("No results found");
+  it('renders the text', () => { 
+    expect(wrapped.find('h2').text()).toEqual("No results found...");
   });
 });

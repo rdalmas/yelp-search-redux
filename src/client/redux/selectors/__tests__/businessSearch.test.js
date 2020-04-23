@@ -1,4 +1,4 @@
-import { getBusiness, getDefaultParams, getPaginationData } from "../businessSearch";
+import { getBusiness, getDefaultParams } from "../businessSearch";
 
 import { business, basicFilters } from "../../../testUtils/fixtures/businessSearch.fixture";
 
@@ -30,15 +30,6 @@ describe("Selectors - Business Search", () => {
       limit: 10
     };
     const result = getDefaultParams.resultFunc({ basicFilters: basicFilters });
-    console.log("RESULT => ", result)
-    expect(result).toMatchObject(expected);
-  });
-  it(" - getPaginationData ", () => {
-    const expected = {
-      total: 15,
-      limit: 10
-    };
-    const result = getPaginationData.resultFunc({ total: 15, basicFilters });
     expect(result).toMatchObject(expected);
   });
 });

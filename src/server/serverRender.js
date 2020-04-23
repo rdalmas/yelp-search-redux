@@ -19,6 +19,8 @@ export default async function serverRender(req, res) {
     }
     store.dispatch(searchBusiness(params))
       .then(() => {
+        // WARNING: See the following for security issues around embedding JSON in HTML:
+        // https://redux.js.org/recipes/server-rendering/#security-considerations
         const preloadedState = store.getState();
 
         const markup = renderToString(

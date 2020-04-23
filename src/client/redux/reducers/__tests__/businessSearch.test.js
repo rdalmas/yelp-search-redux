@@ -3,9 +3,6 @@ import reducer from "../businessSearch";
 
 const initialState = {
   business: [],
-  total: 0,
-  loading: false,
-  error: "",
   basicFilters: [
     {
       options: ["pizza", "burguer", "sushi"],
@@ -23,6 +20,10 @@ const initialState = {
     {
       name: "limit",
       defaultValue: 10,
+    },
+    {
+      name: "offset",
+      defaultValue: 0
     }
   ]
 };
@@ -38,51 +39,16 @@ describe("Reducers - Business Search", () => {
       expect(
         reducer([
           {
-            business: [],
-            total: 0,
-            loading: true
+            business: []
           }
         ], {
           type: a.SEARCH_BUSINESS,
           payload: { 
-            total: 200, 
             businesses: [{id: 1}]
           }
         })
       ).toMatchObject({
-        total: 200,
-        business: [{id: 1}],
-        loading: false
-      });
-    });
-    it("should handle LOADING", () => {
-      expect(
-        reducer([
-          {
-            loading: false
-          }
-        ],
-          {
-            type: a.LOADING
-          }
-        )
-      ).toMatchObject({
-        loading: true
-      });
-    });
-    it("should handle ERROR", () => {
-      expect(
-        reducer(
-          { error: "" },
-          {
-            type: a.ERROR,
-            payload: {
-              message: "Oh my god, I did boo boo..."
-            }
-          }
-        )
-      ).toMatchObject({
-        error: "Oh my god, I did boo boo..."
+        business: [{id: 1}]
       });
     });
   });

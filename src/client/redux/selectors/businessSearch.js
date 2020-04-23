@@ -21,11 +21,6 @@ export const getBusiness = createSelector(
   }
 );
 
-export const isLoading = createSelector(
-  businessState,
-  ({ loading }) => loading
-);
-
 export const getBasicFilters = createSelector(
   businessState,
   ({ basicFilters }) => basicFilters
@@ -36,14 +31,4 @@ export const getDefaultParams = createSelector(
   ({ basicFilters }) => basicFilters.reduce((acc, next) => ({
       ...acc, [next.name]: next.defaultValue
     }), {})
-);
-
-export const getPaginationData = createSelector(
-  businessState,
-  ({ total, basicFilters }) => {
-    const limit = basicFilters.find(filter => filter.name === "limit");
-    if (limit && limit.defaultValue) return { total, limit: limit.defaultValue }
-
-    return { total, limit: 10 }
-  }
 );

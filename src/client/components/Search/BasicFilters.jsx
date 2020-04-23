@@ -28,7 +28,7 @@ const BasicFilters = ({ filters, onChange, onSubmit }) => (
     {filters && filters.map(filter => (
       <RenderInput key={filter.name} onChange={onChange} {...filter}  />
     ))}
-    <button type="button" className="btn btn-primary mt-3" onClick={onSubmit}>Filter</button>
+    <button type="submit" className="btn btn-primary mt-3 mb-3" onClick={onSubmit}>Filter</button>
   </>
 )
 

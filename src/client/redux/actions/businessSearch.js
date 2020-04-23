@@ -2,9 +2,7 @@ import { createAction } from "redux-actions";
 import fetch from "node-fetch";
 
 import { actions as a, endpoints as e } from "../actions";
-
-const loadingData = createAction(a.LOADING);
-const fetchError = createAction(a.ERROR, error => error);
+import { loadingData, fetchError } from "./appState";
 
 const searchBusinessAction = createAction(a.SEARCH_BUSINESS, data => data);
 
