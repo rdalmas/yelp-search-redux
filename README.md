@@ -1,8 +1,15 @@
 ## Quick Start
 
+This app was built with React/Redux and bootstrap 4 on the client. The server was built with Node.js and Express and serves as a middleware to connect the FE with the Yelp API.
+
+Future improvements:
+- Google maps api connection
+- Backend cache api calls
+- Improve layout
+
 Below is a list of commands you will probably find useful.
 
-### `npm start` or `yarn start`
+### `npm run dev` or `yarn run dev` for DEVELOPMENT
 
 Runs the project in development mode.  
 You can view your application at `http://localhost:3000`
@@ -16,7 +23,7 @@ Builds the app for production to the build folder.
 The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
-### `npm run start:prod` or `yarn start:prod`
+### `npm run start` or `yarn start`
 
 Runs the compiled app in production.
 
