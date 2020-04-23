@@ -1,7 +1,7 @@
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import React from 'react';
-import { hydrate, render } from 'react-dom';
+import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux'
 
 import configureStore from '../configureStore'
@@ -15,10 +15,10 @@ delete window.__PRELOADED_STATE__;
 
 const store = configureStore(preloadedState)
 
-const method = !!module.hot ? render : hydrate
+// const method = !!module.hot ? render : hydrate
 
 
-method(
+hydrate(
   <Provider store={store}>
     <Router>
       <TopBar title="Yelp Search" />

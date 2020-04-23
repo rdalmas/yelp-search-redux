@@ -1,6 +1,6 @@
 const generatePage = (assets, markup, preloadedState) => (
   `<!doctype html>
-    <html lang="">
+    <html lang="en">
       <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta charset="utf-8" />
@@ -20,7 +20,7 @@ const generatePage = (assets, markup, preloadedState) => (
       </head>
       <body>
         <div id="root">${markup}</div>
-        <script>
+        <script defer>
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
             /</g,
             '\\u003c'
