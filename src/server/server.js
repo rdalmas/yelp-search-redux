@@ -6,6 +6,11 @@ import routes from "./routes";
 
 const server = express();
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 // APIs
 server.use("/api", routes);
 
