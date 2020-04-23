@@ -6,7 +6,7 @@ import serverRender from "./serverRender";
 import routes from "./routes";
 
 const server = express();
-server.use(cors({ origin: "http://localhost:3000" }));
+server.use(cors());
 
 // APIs
 server.use("/api", routes);
