@@ -15,10 +15,10 @@ delete window.__PRELOADED_STATE__;
 
 const store = configureStore(preloadedState)
 
-// const method = !!module.hot ? render : hydrate
+const method = !!module.hot ? render : hydrate
 
 
-hydrate(
+method(
   <Provider store={store}>
     <Router>
       <TopBar title="Yelp Search" />
