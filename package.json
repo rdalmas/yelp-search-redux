@@ -29,6 +29,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "path": "^0.12.7",
