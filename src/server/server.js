@@ -13,6 +13,7 @@ server.use("/api", routes);
 
 // SERVER RENDERING
 server
+  .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', serverRender);
 
