@@ -2,6 +2,8 @@
 
 This app was built with React/Redux and bootstrap 4 on the client. The server was built with Node.js and Express and connects the FE with the Yelp API.
 
+It uses SSR to load the page really fast, than gently handles over to the client with preloaded restaurants by dispatching the search action on the server.
+
 Future improvements:
 - Google maps api connection
 - Backend cache api calls
