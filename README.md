@@ -1,11 +1,14 @@
-## Quick Start
+## Yelp Search app
 
-This app was built with React/Redux and bootstrap 4 on the client. The server was built with Node.js and Express and serves as a middleware to connect the FE with the Yelp API.
+This app was built with React/Redux and bootstrap 4 on the client. The server was built with Node.js and Express and connects the FE with the Yelp API.
 
 Future improvements:
 - Google maps api connection
 - Backend cache api calls
 - Improve layout
+- Deploy to Heroku
+
+## Quick Start
 
 Below is a list of commands you will probably find useful.
 
